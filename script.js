@@ -52,7 +52,6 @@ async function init(){
          // mark- correct or not or close
         const guessParts = currentGuess.split("");
         const map = makeMap(wordParts);
-        console.log(map);
         for(let i = 0; i < ANSWER_LENGTH; i++){
             //mark correct
             if(guessParts[i] === wordParts[i]){
