@@ -9,7 +9,7 @@ async function init(){
     
     const res = await fetch('https://words.dev-apis.com/word-of-the-day?random=1');// ...-day/?random=1
     const resObj = await res.json(); //const { word } = await res.json()
-    const word = resObj.word.toUpperCase();
+    const word = "PLUMP"//resObj.word.toUpperCase();
     const wordParts  = word.split("")
     let done = false;
     setLoading(false);
@@ -78,15 +78,16 @@ async function init(){
         currentRow++;
         
         //win or lose?
-        if(currentRow===ROUNDS){
-            alert(`You lose, the word was ${word}`)
-            done=true
-        }
-        else if (currentGuess === word){
+        
+        if (currentGuess === word){
             document.querySelector('.brand').innerHTML ="Word Masters 🎉"
             document.querySelector('.brand').classList.add("winner");
             done=true;
             return;
+        }
+        else if(currentRow===ROUNDS){
+            alert(`You lose, the word was ${word}`)
+            done=true
         }
         currentGuess='';
 
