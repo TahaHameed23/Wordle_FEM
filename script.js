@@ -9,7 +9,7 @@ async function init(){
     
     const res = await fetch('https://words.dev-apis.com/word-of-the-day?random=1');// ...-day/?random=1
     const resObj = await res.json(); //const { word } = await res.json()
-    const word = "PLUMP"//resObj.word.toUpperCase();
+    const word = resObj.word.toUpperCase();
     const wordParts  = word.split("")
     let done = false;
     setLoading(false);
